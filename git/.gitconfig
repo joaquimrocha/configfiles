@@ -1,0 +1,15 @@
+[user]
+	name = NAME
+	email = EMAIL
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	sb = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:iso8601)\t%(refname:short)'
+	rbi = !git  rebase -i
+  	paste = !sh -c 'git format-patch -C -M --patience --stdout $1 | fpaste -l diff' -
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 700x550+1929+66
+	main-window-view = HistoryView
