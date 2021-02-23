@@ -9,6 +9,9 @@
 	sb = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:iso8601)\t%(refname:short)'
 	rbi = !git  rebase -i
   	paste = !sh -c 'git format-patch -C -M --patience --stdout $1 | fpaste -l diff' -
+	pom = !git pull --rebase origin $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+	com = !git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+	pcb = !git pull origin $(git rev-parse --abbrev-ref HEAD)
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 700x550+1929+66
